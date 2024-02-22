@@ -1,0 +1,493 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "popins", sans-serif;
+  /* font-family: 'Dosis', sans-serif; */
+}
+
+.flag-icon {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  vertical-align: middle;
+}
+
+/* IMPORTANT:
+  -md itu untuk ipad (portrait),
+  -lg itu untuk ipad (landscape), 
+  -lg juga kadang untuk laptop yang punya resolusi kecil,
+  -xl itu untuk desktop (macbook, laptop modern lainnya) 
+  -untuk mobile, jangan pakai prefix (contoh: text-xl,
+  sedangkan untuk ipad, contoh: md:text-xl, artinya,
+  untuk layar md ke atas akan mengapply text-xl) 
+  */
+
+.ant-picker,
+.ant-picker-focused,
+.ant-picker:hover {
+  border-color: #999999 !important;
+  box-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+.ant-select-selection-placeholder {
+  color: #999999 !important;
+}
+
+.ant-select-selection-item,
+.ant-select-item-option-content,
+.ant-select {
+  font-weight: 500 !important;
+}
+
+/* :where(.css-dev-only-do-not-override-18qjnn6).ant-picker-dropdown
+    .ant-picker-panel-container {
+    vertical-align: bottom !important;
+  } */
+
+input[type="date"]::before {
+  content: attr(data-placeholder);
+  width: 100%;
+}
+
+/* hide our custom/fake placeholder text when in focus to show the default
+   * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+   */
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+  display: none;
+}
+
+@layer base {
+
+  /* text */
+  h1 {
+    @apply font-bold text-4xl md:text-5xl xl:text-6xl;
+  }
+
+  h2 {
+    @apply font-bold text-2xl md:text-3xl xl:text-4xl;
+  }
+
+  h3 {
+    @apply font-semibold text-xl md:text-2xl xl:text-3xl;
+  }
+
+  p {
+    @apply text-base md:text-lg;
+  }
+}
+
+@layer components {
+  .customDropShadow {
+    @apply drop-shadow-[2px_2px_4px_#00000040];
+  }
+
+  .h1 {
+    @apply font-bold text-4xl md:text-5xl xl:text-6xl;
+  }
+
+  .h1Smaller {
+    @apply font-bold text-3xl md:text-4xl xl:text-5xl;
+  }
+
+  .pSmaller {
+    @apply text-base;
+  }
+
+  .pSmaller2 {
+    @apply text-sm;
+  }
+
+  .pSmaller3 {
+    @apply text-xs;
+  }
+
+  .pBigger {
+    @apply text-lg md:text-xl;
+  }
+
+  .pBigger2 {
+    @apply text-xl md:text-2xl;
+  }
+
+  .p {
+    @apply text-base md:text-lg;
+  }
+
+  .h2 {
+    @apply font-bold text-2xl md:text-3xl xl:text-4xl;
+  }
+
+  .h3 {
+    @apply font-semibold text-xl md:text-2xl xl:text-3xl;
+  }
+
+  .h3Smaller {
+    @apply font-semibold text-lg md:text-xl xl:text-2xl;
+  }
+
+  .shadowTitle {
+    @apply shadow-[4px_4px_4px_0px_#00000040];
+  }
+
+  .shadowImg {
+    @apply shadow-[0px_4px_4px_0px_#00000040];
+  }
+
+  .dropTitle {
+    @apply drop-shadow-[2px_2px_2px_rgba(0, 0, 0, 0.25)];
+  }
+
+  /* padding
+    RUMUS
+    paddingAllEquals = paddingX + paddingY
+    paddingAllYLonger = paddingX + paddingYLonger
+    paddingAllYLonger2 = paddingX + paddingYLonger2
+    paddingAllYShorter = paddingX + paddingYShorter
+    paddingAllYShorter2 = paddingX + paddingYShorter2
+    paddingAllXShorter = paddingXShorter + paddingY
+    paddingAllXShorter2 = paddingXShorter2 + paddingY
+    paddingAllXLonger2 = paddingXLonger3 + paddingY
+    paddingAllXLonger = paddingXLonger + paddingY
+    paddingYLonger = paddingTopLonger + paddingBottomLonger
+    paddingY = paddingTop + paddingBottom
+    */
+  .paddingX {
+    @apply px-[6vw];
+  }
+
+  .paddingLeft {
+    @apply pl-[6vw];
+  }
+
+  .paddingLeftShorter {
+    @apply pl-[4vw];
+  }
+
+  .paddingLeftShorter2 {
+    @apply pl-[2vw];
+  }
+
+  .paddingLeftLonger {
+    @apply pl-[8vw];
+  }
+
+  .paddingLeftLonger2 {
+    @apply pl-[10vw];
+  }
+
+  .paddingLeftLonger3 {
+    @apply pl-[12vw];
+  }
+
+  .paddingLeftLonger4 {
+    @apply pl-[14vw];
+  }
+
+  .paddingLeftLonger5 {
+    @apply pl-[16vw];
+  }
+
+  .paddingLeftLonger6 {
+    @apply pl-[18vw];
+  }
+
+  .paddingLeftLonger7 {
+    @apply pl-[20vw];
+  }
+
+  .paddingLeftLonger8 {
+    @apply pl-[22vw];
+  }
+
+  .paddingLeftLonger9 {
+    @apply pl-[24vw];
+  }
+
+  .paddingRight {
+    @apply pr-[6vw];
+  }
+
+  .paddingRightLonger {
+    @apply pr-[8vw];
+  }
+
+  .paddingRightLonger2 {
+    @apply pr-[10vw];
+  }
+
+  .paddingRightShorter {
+    @apply pr-[4vw];
+  }
+
+  .paddingRightShorter2 {
+    @apply pr-[2vw];
+  }
+
+  .paddingXShorter {
+    @apply px-[4vw];
+  }
+
+  .paddingXShorter2 {
+    @apply px-[2vw];
+  }
+
+  .paddingXShorter3 {
+    @apply px-[1vw];
+  }
+
+  .paddingXLonger {
+    @apply px-[8vw];
+  }
+
+  .paddingXLonger2 {
+    @apply px-[10vw];
+  }
+
+  .paddingXLonger3 {
+    @apply px-[12vw];
+  }
+
+  .paddingXLonger4 {
+    @apply px-[14vw];
+  }
+
+  .paddingXLonger5 {
+    @apply px-[16vw];
+  }
+
+  .paddingXLonger6 {
+    @apply px-[18vw];
+  }
+
+  .paddingXLonger7 {
+    @apply px-[20vw];
+  }
+
+  .paddingXLonger8 {
+    @apply px-[22vw];
+  }
+
+  .paddingY {
+    @apply py-[6vw];
+  }
+
+  .paddingYShorter3 {
+    @apply py-[1vw];
+  }
+
+  .paddingYShorter2 {
+    @apply py-[2vw];
+  }
+
+  .paddingYShorter1-5 {
+    @apply py-[3vw];
+  }
+
+  .paddingYShorter {
+    @apply py-[4vw];
+  }
+
+  .paddingYLonger {
+    @apply py-[8vw];
+  }
+
+  .paddingYLonger2 {
+    @apply py-[10vw];
+  }
+
+  .paddingYLonger3 {
+    @apply py-[12vw];
+  }
+
+  .paddingYLonger4 {
+    @apply py-[14vw];
+  }
+
+  .paddingYLonger5 {
+    @apply py-[16vw];
+  }
+
+  .paddingBottom {
+    @apply pb-[6vw];
+  }
+
+  .paddingBottomShorter {
+    @apply pb-[4vw];
+  }
+
+  .paddingBottomShorter2 {
+    @apply pb-[2vw];
+  }
+
+  .paddingBottomShorter3 {
+    @apply pb-[1vw];
+  }
+
+  .paddingBottomLonger {
+    @apply pb-[8vw];
+  }
+
+  .paddingBottomLonger2 {
+    @apply pb-[10vw];
+  }
+
+  .paddingBottomLonger3 {
+    @apply pb-[12vw];
+  }
+
+  .paddingTop {
+    @apply pt-[6vw];
+  }
+
+  .paddingTopShorter {
+    @apply pt-[4vw];
+  }
+
+  .paddingTopShorter2 {
+    @apply pt-[2vw];
+  }
+
+  .paddingTopShorter3 {
+    @apply pt-[1vw];
+  }
+
+  .paddingTopLonger {
+    @apply pt-[8vw];
+  }
+
+  .paddingTopLonger2 {
+    @apply pt-[10vw];
+  }
+
+  .paddingTopLonger3 {
+    @apply pt-[12vw];
+  }
+
+  .paddingTopLonger4 {
+    @apply pt-[14vw];
+  }
+
+  .paddingTopLonger5 {
+    @apply pt-[16vw];
+  }
+
+  .paddingTopLonger6 {
+    @apply pt-[18vw];
+  }
+
+  .paddingAllXShorter {
+    @apply px-[4vw] py-[6vw];
+  }
+
+  .paddingAllXShorter2 {
+    @apply px-[2vw] py-[6vw];
+  }
+
+  .paddingAllXLonger {
+    @apply px-[6vw] py-[8vw];
+  }
+
+  .paddingAllXLonger2 {
+    @apply px-[8vw] py-[10vw];
+  }
+
+  .paddingAllYShorter {
+    @apply px-[6vw] py-[4vw];
+  }
+
+  .paddingAllYShorter2 {
+    @apply px-[6vw] py-[2vw];
+  }
+
+  .paddingAllYLonger {
+    @apply px-[6vw] py-[8vw];
+  }
+
+  .paddingAllYLonger2 {
+    @apply px-[6vw] py-[10vw];
+  }
+
+  .paddingAllEquals {
+    @apply p-[8vw];
+  }
+
+  .paddingAllShorter {
+    @apply p-[4vw];
+  }
+
+  .paddingAllShorter2 {
+    @apply p-[2vw];
+  }
+
+  .marginYShorter {
+    @apply my-[4vw];
+  }
+
+  .marginYShorter2 {
+    @apply my-[2vw];
+  }
+
+  .marginXShorter {
+    @apply mx-[4vw];
+  }
+
+  .marginXShorter2 {
+    @apply mx-[6vw];
+  }
+
+  .marginY {
+    @apply my-[6vw];
+  }
+
+  .marginBottom {
+    @apply mb-[6vw];
+  }
+
+  .marginRight {
+    @apply mr-[6vw];
+  }
+
+  .marginBottomShorter {
+    @apply mb-[4vw];
+  }
+
+  .marginBottomShorter2 {
+    @apply mb-[2vw];
+  }
+
+  .marginBottomLonger {
+    @apply mb-[8vw];
+  }
+
+  .marginBottomLonger2 {
+    @apply mb-[10vw];
+  }
+
+  .marginTop {
+    @apply mt-[6vw];
+  }
+
+  .marginTopShorter {
+    @apply mt-[4vw];
+  }
+
+  .marginTopShorter2 {
+    @apply mt-[2vw];
+  }
+
+  .marginTopLonger {
+    @apply mt-[8vw];
+  }
+
+  .marginTopLonger2 {
+    @apply mt-[10vw];
+  }
+
+  .marginAllEquals {
+    @apply m-[6vw];
+  }
+}
